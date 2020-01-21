@@ -1,5 +1,6 @@
 package com.develogical;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class QueryProcessor {
@@ -21,6 +22,31 @@ public class QueryProcessor {
             }
 
             return String.valueOf(max);
+        }
+
+        if (query.toLowerCase().contains("are primes:")) {
+            String numbers = query.toLowerCase().split(": ")[2];
+            int[] array = Arrays.asList(numbers.split(", ")).stream().mapToInt(Integer::parseInt).toArray();
+            int max = array[0];
+            String primes = "";
+            for(int i = 1; i<array.length; i++) {
+                int prime = 0;
+                for(int j = 2; j < array[i]/2; j++) {
+                    if(array[i] % j == 0) {
+                        prime = 1;
+                    }
+                }
+                if(prime == 0) {
+                    if(i < array.length - 1) {
+                        primes = primes + String.valueOf(array[i]) + ", ";
+                    } else {
+                        primes = primes + String.valueOf(array[i]);
+                    }
+                }
+            }
+
+
+            return primes;
         }
         return "";
     }
