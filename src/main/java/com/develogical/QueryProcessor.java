@@ -52,7 +52,7 @@ public class QueryProcessor {
             return "yellow";
         }
 
-        if (query.toLowerCase().contains("plus") && !query.toLowerCase().contains("minus") && !query.toLowerCase().contains("multiply") && !query.toLowerCase().contains("divide")) {
+        if (query.toLowerCase().contains("plus") && !query.toLowerCase().contains("minus") && !query.toLowerCase().contains("multiplied") && !query.toLowerCase().contains("divided")) {
             String numbers = query.toLowerCase().split(": ")[1];
             String first = numbers.split("is ")[1];
             int[] array = Arrays.asList(first.split(" plus ")).stream().mapToInt(Integer::parseInt).toArray();
@@ -63,7 +63,7 @@ public class QueryProcessor {
             return String.valueOf(sum);
         }
 
-        if (query.toLowerCase().contains("minus") && !query.toLowerCase().contains("plus") && !query.toLowerCase().contains("multiply") && !query.toLowerCase().contains("divide")) {
+        if (query.toLowerCase().contains("minus") && !query.toLowerCase().contains("plus") && !query.toLowerCase().contains("multiplied") && !query.toLowerCase().contains("divided")) {
             String numbers = query.toLowerCase().split(": ")[1];
             String first = numbers.split("is ")[1];
             int[] array = Arrays.asList(first.split(" plus ")).stream().mapToInt(Integer::parseInt).toArray();
