@@ -51,6 +51,18 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("banana")) {
             return "yellow";
         }
+
+        if (query.toLowerCase().contains("plus")) {
+            String numbers = query.toLowerCase().split(": ")[1];
+            String first = numbers.split("is ")[1];
+            int[] array = Arrays.asList(first.split(" plus ")).stream().mapToInt(Integer::parseInt).toArray();
+            int sum = 0;
+            for(int i = 0; i<array.length; i++) {
+                sum += array[i];
+            }
+            return String.valueOf(sum);
+        }
+
         return "";
     }
 
