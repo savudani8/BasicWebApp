@@ -29,7 +29,7 @@ public class QueryProcessor {
             int[] array = Arrays.asList(numbers.split(", ")).stream().mapToInt(Integer::parseInt).toArray();
             int max = array[0];
             String primes = "";
-            for(int i = 1; i<array.length; i++) {
+            for(int i = 0; i<array.length; i++) {
                 int prime = 0;
                 for(int j = 2; j < array[i]/2; j++) {
                     if(array[i] % j == 0) {
