@@ -37,15 +37,11 @@ public class QueryProcessor {
                     }
                 }
                 if(prime == 0) {
-                    if(i < array.length - 1) {
-                        primes = primes + String.valueOf(array[i]) + ", ";
-                    } else {
-                        primes = primes + String.valueOf(array[i]);
-                    }
+                    primes = primes + String.valueOf(array[i]) + ", ";
                 }
             }
 
-
+            primes = primes.substring(0, primes.length() - 2);
             return primes;
         }
 
