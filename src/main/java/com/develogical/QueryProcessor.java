@@ -48,6 +48,12 @@ public class QueryProcessor {
 
             return primes;
         }
+
+        if (query.toLowerCase().contains("who played James Bond in the film Dr No")) {
+            return "Sean Connery";
+        }
         return "";
     }
+
+
 }
